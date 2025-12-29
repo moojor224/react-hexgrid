@@ -82,7 +82,7 @@ export function calculateCoordinates(
 }
 
 export type LayoutProps = {
-  children:
+  children?:
   | React.ReactElement
   | React.ReactElement[]
   | React.ReactNode
@@ -105,7 +105,7 @@ export function Layout({
   flat = true,
   spacing = defaultSpacing,
   origin = defaultOrigin,
-  children,
+  children = null,
   className,
   ...rest
 }: LayoutProps) {

@@ -26,7 +26,7 @@ export declare function useLayoutContext(): LayoutContextProps;
  */
 export declare function calculateCoordinates(circumradius: number, angle?: number, center?: Point): Point[];
 export type LayoutProps = {
-    children: React.ReactElement | React.ReactElement[] | React.ReactNode | JSX.Element | JSX.Element[];
+    children?: React.ReactElement | React.ReactElement[] | React.ReactNode | JSX.Element | JSX.Element[];
     className?: string;
     flat?: boolean;
     origin?: any;
