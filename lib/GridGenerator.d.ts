@@ -1,4 +1,4 @@
-import { Hex } from "./models/Hex";
+import { Hex } from "./models/Hex.js";
 type Generator = (args: any) => Hex[];
 export type GeneratorName = "ring" | "spiral" | "parallelogram" | "triangle" | "hexagon" | "rectangle" | "orientedRectangle";
 /** This class contains static methods for generating Hex coordinates

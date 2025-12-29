@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Hexagon from "./Hexagon/Hexagon";
+import Hexagon from "./Hexagon/Hexagon.js";
 import { HexGrid, GridGenerator } from "./"
 
 import "../.storybook/global.css";

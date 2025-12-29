@@ -1,11 +1,11 @@
 import * as React from "react"
 //import classNames from "classnames"
-import { Hex } from "../models/Hex"
-import { HexUtils } from "../HexUtils"
-import { LayoutDimension, useLayoutContext } from "../Layout"
-import { Point } from "../models/Point"
-import { LAYOUT_FLAT } from "../Layout";
-import { calculateCoordinates } from "../Layout"
+import { Hex } from "../models/Hex.js"
+import { HexUtils } from "../HexUtils.js"
+import { LayoutDimension, useLayoutContext } from "../Layout.js"
+import { Point } from "../models/Point.js"
+import { LAYOUT_FLAT } from "../Layout.js";
+import { calculateCoordinates } from "../Layout.js"
 
 type H = { data?: any; state: { hex: Hex }; props: HexagonProps }
 
@@ -170,7 +170,7 @@ export function Hexagon(
   const fillId = fill ? `url(#${fill})` : undefined
   //const draggable = (onDragStart || onDragEnd || onDragOver) ? { draggable: true } : { draggable: false }
   const draggable = { draggable: true } as any
-  console.log(draggable)
+//   console.log(draggable)
   return (
     <g
       className={className}

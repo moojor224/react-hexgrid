@@ -1,7 +1,7 @@
 import React from "react"
-import { HexUtils } from "./HexUtils"
-import { useLayoutContext } from "./Layout"
-import { Hex } from "./models/Hex"
+import { HexUtils } from "./HexUtils.js"
+import { useLayoutContext } from "./Layout.js"
+import { Hex } from "./models/Hex.js"
 
 export type PathProps = {
   start: Hex

@@ -9,7 +9,7 @@ import {
   HexUtils,
   Text,
 } from "../"
-import Hex from "./models/Hex"
+import Hex from "./models/Hex.js"
 
 export default {
   title: "Stories/PathFinding",

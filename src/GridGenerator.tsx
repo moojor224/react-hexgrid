@@ -1,5 +1,5 @@
-import { Hex } from "./models/Hex"
-import { HexUtils } from "./HexUtils"
+import { Hex } from "./models/Hex.js"
+import { HexUtils } from "./HexUtils.js"
 
 // this type is an abstraction of ring, triangle, hexagon, etc.
 // it accepts any variation of arguments, and returns Hex[]

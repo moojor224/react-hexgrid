@@ -1,6 +1,6 @@
-import { LayoutDimension } from "./Layout";
-import { Hex, HexCoordinates } from "./models/Hex";
-import { Point } from "./models/Point";
+import { LayoutDimension } from "./Layout.js";
+import { Hex, HexCoordinates } from "./models/Hex.js";
+import { Point } from "./models/Point.js";
 /** A class which contains static methods which are useful for working with Hexes */
 export declare class HexUtils {
     static DIRECTIONS: Hex[];

@@ -1,6 +1,6 @@
 import React from "react"
-import Point from "./models/Point"
-import { Size } from "./Layout"
+import Point from "./models/Point.js"
+import { Size } from "./Layout.js"
 
 export type PatternProps = {
   id: string

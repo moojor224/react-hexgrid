@@ -1,5 +1,5 @@
 import React from "react";
-import { Size } from "./Layout";
+import { Size } from "./Layout.js";
 export type PatternProps = {
     id: string;
     link: string;

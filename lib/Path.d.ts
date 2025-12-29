@@ -1,5 +1,5 @@
 import React from "react";
-import { Hex } from "./models/Hex";
+import { Hex } from "./models/Hex.js";
 export type PathProps = {
     start: Hex;
     end?: Hex;

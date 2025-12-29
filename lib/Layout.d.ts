@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Orientation } from "./models/Orientation";
-import { Point } from "./models/Point";
+import { Orientation } from "./models/Orientation.js";
+import { Point } from "./models/Point.js";
 export type Size = {
     x: number;
     y: number;

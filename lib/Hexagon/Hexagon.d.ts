@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Hex } from "../models/Hex";
-import { Point } from "../models/Point";
+import { Hex } from "../models/Hex.js";
+import { Point } from "../models/Point.js";
 type H = {
     data?: any;
     state: {
@@ -29,7 +29,7 @@ export type HexagonProps = {
      */
     fill?: string;
     /**
-     * Optional classname.  Usage unclear, currently not used.
+     * Optional classname.
      */
     className?: string;
     /**
