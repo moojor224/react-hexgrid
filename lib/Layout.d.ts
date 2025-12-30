@@ -16,6 +16,7 @@ export type LayoutContextProps = {
     points: string;
 };
 export declare const LAYOUT_FLAT: Orientation;
+export declare const LAYOUT_POINTY: Orientation;
 export declare function useLayoutContext(): LayoutContextProps;
 /**
  * Calculates the points for a hexagon given the radius, angle, and center

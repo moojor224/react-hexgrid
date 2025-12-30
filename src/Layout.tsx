@@ -26,7 +26,7 @@ export const LAYOUT_FLAT = new Orientation(
   Math.sqrt(3.0) / 3.0,
   0.0,
 )
-const LAYOUT_POINTY = new Orientation(
+export const LAYOUT_POINTY = new Orientation(
   Math.sqrt(3.0),
   Math.sqrt(3.0) / 2.0,
   0.0,
