@@ -61,6 +61,8 @@ export type HexagonProps = {
   data?: any
 
   onMouseEnter?: HexagonMouseEventHandler
+  onMouseDown?: HexagonMouseEventHandler
+  onMouseUp?: HexagonMouseEventHandler
   onMouseLeave?: HexagonMouseEventHandler
   onClick?: HexagonMouseEventHandler
   onDragStart?: HexagonDragEventHandler
@@ -87,14 +89,14 @@ export function Hexagon(
     Omit<
       React.SVGProps<SVGGElement>,
       | "transform"
-      | "onDragStart"
-      | "onDragEnd"
       | "onDrop"
       | "onDragOver"
       | "onMouseEnter"
       | "onClick"
       | "onMouseOver"
       | "onMouseLeave"
+      | "onMouseUp"
+      | "onMouseDown"
     >,
 ) {
   // destructure props into their values
@@ -108,14 +110,7 @@ export function Hexagon(
     className,
     radius,
     children,
-    onDragStart,
-    onDragEnd,
     onDrop,
-    onDragOver,
-    onMouseEnter,
-    onMouseLeave,
-    onMouseOver,
-    onClick,
     data,
     fillOpacity,
     ...rest
@@ -171,62 +166,34 @@ export function Hexagon(
   //const draggable = (onDragStart || onDragEnd || onDragOver) ? { draggable: true } : { draggable: false }
   const draggable = { draggable: true } as any
 //   console.log(draggable)
+  function createMouseEvent(name: string) {
+    return function (event: React.MouseEvent<SVGGElement, MouseEvent>){
+      if (name in props) {
+        (props[name as keyof typeof props] as HexagonMouseEventHandler)(event, { data, state, props })
+      }
+    }
+  }
+  const eventListeners = {
+    onDragOver: createMouseEvent("onDragOver"),
+    onMouseEnter: createMouseEvent("onMouseEnter"),
+    onClick: createMouseEvent("onClick"),
+    onMouseOver: createMouseEvent("onMouseOver"),
+    onMouseLeave: createMouseEvent("onMouseLeave"),
+    onMouseDown: createMouseEvent("onMouseDown"),
+    onMouseUp: createMouseEvent("onMouseDown"),
+  };
   return (
     <g
       className={className}
       transform={`translate(${pixel.x}, ${pixel.y})`}
       {...rest}
       {...draggable}
-      onDragStart={(e) => {
-        if (onDragStart) {
-          const targetProps: TargetProps = {
-            hex: hex,
-            pixel,
-            data: data,
-            fill: fill,
-            className: className,
-          }
-          e.dataTransfer.setData("hexagon", JSON.stringify(targetProps))
-          onDragStart(e, { data, state, props })
-        }
-      }}
-      onDragEnd={(e) => {
-        if (onDragEnd) {
-          e.preventDefault()
-          const success = e.dataTransfer.dropEffect !== "none"
-          onDragEnd(e, { state, props }, success)
-        }
-      }}
+      {...eventListeners}
       onDrop={(e) => {
         if (onDrop) {
           e.preventDefault()
           const target = JSON.parse(e.dataTransfer.getData("hexagon"))
           onDrop(e, { data, state, props }, target)
-        }
-      }}
-      onDragOver={(e) => {
-        if (onDragOver) {
-          onDragOver(e, { data, state, props })
-        }
-      }}
-      onMouseEnter={(e) => {
-        if (onMouseEnter) {
-          onMouseEnter(e, { data, state, props })
-        }
-      }}
-      onClick={(e) => {
-        if (onClick) {
-          onClick(e, { data, state, props })
-        }
-      }}
-      onMouseOver={(e) => {
-        if (onMouseOver) {
-          onMouseOver(e, { data, state, props })
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (onMouseLeave) {
-          onMouseLeave(e, { data, state, props })
         }
       }}
     >
