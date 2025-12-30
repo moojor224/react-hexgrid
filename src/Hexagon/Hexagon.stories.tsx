@@ -67,7 +67,7 @@ const HooksDemoComponent = () => {
                         r={hex.r}
                         s={hex.s}
                         className={hex.props ? hex.props.className : "tutorial"}
-                        onMouseOver={(_event, source) => {
+                        onMouseMove={(_event, source) => {
                             // Set the path's end on hover
 
                             const targetHex = source.state.hex

@@ -69,7 +69,7 @@ export type HexagonProps = {
   onDragEnd?: HexagonDragEventHandler
   onDragOver?: HexagonDragEventHandler
   onDrop?: HexagonDragDropEventHandler<any, TargetProps>
-  onMouseOver?: HexagonMouseEventHandler
+  onMouseMove?: HexagonMouseEventHandler
   children?: React.ReactNode | React.ReactNode[]
 }
 
@@ -93,7 +93,7 @@ export function Hexagon(
       | "onDragOver"
       | "onMouseEnter"
       | "onClick"
-      | "onMouseOver"
+      | "onMouseMove"
       | "onMouseLeave"
       | "onMouseUp"
       | "onMouseDown"
@@ -177,7 +177,7 @@ export function Hexagon(
     onDragOver: createMouseEvent("onDragOver"),
     onMouseEnter: createMouseEvent("onMouseEnter"),
     onClick: createMouseEvent("onClick"),
-    onMouseOver: createMouseEvent("onMouseOver"),
+    onMouseMove: createMouseEvent("onMouseMove"),
     onMouseLeave: createMouseEvent("onMouseLeave"),
     onMouseDown: createMouseEvent("onMouseDown"),
     onMouseUp: createMouseEvent("onMouseDown"),

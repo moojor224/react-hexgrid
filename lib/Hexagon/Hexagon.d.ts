@@ -51,7 +51,7 @@ export type HexagonProps = {
     onDragEnd?: HexagonDragEventHandler;
     onDragOver?: HexagonDragEventHandler;
     onDrop?: HexagonDragDropEventHandler<any, TargetProps>;
-    onMouseOver?: HexagonMouseEventHandler;
+    onMouseMove?: HexagonMouseEventHandler;
     children?: React.ReactNode | React.ReactNode[];
 };
 type TargetProps = {
@@ -64,6 +64,6 @@ type TargetProps = {
 /**
  * Renders a Hexagon cell at the given qrs-based coordinates.
  */
-export declare function Hexagon(props: HexagonProps & Omit<React.SVGProps<SVGGElement>, "transform" | "onDrop" | "onDragOver" | "onMouseEnter" | "onClick" | "onMouseOver" | "onMouseLeave" | "onMouseUp" | "onMouseDown">): React.JSX.Element;
+export declare function Hexagon(props: HexagonProps & Omit<React.SVGProps<SVGGElement>, "transform" | "onDrop" | "onDragOver" | "onMouseEnter" | "onClick" | "onMouseMove" | "onMouseLeave" | "onMouseUp" | "onMouseDown">): React.JSX.Element;
 export default Hexagon;
 //# sourceMappingURL=Hexagon.d.ts.map

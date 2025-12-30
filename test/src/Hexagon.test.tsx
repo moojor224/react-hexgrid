@@ -26,7 +26,7 @@ test("Hexagon should render correctly with default props", () => {
 
 test("Hexagon mouse callbacks should be called", async () => {
   const onMouseEnter = jest.fn()
-  const onMouseOver = jest.fn()
+  const onMouseMove = jest.fn()
   const onMouseLeave = jest.fn()
   const onClick = jest.fn()
   const onDragStart = jest.fn()
@@ -51,7 +51,7 @@ test("Hexagon mouse callbacks should be called", async () => {
           className={"test1"}
           data={{ a: "b" }}
           onMouseEnter={onMouseEnter}
-          onMouseOver={onMouseOver}
+          onMouseMove={onMouseMove}
           onMouseLeave={onMouseLeave}
           onClick={onClick}
           onDragStart={onDragStart}
@@ -69,15 +69,15 @@ test("Hexagon mouse callbacks should be called", async () => {
 
   expect(el).toBeDefined()
 
-  expect(onMouseOver).toHaveBeenCalledTimes(0)
+  expect(onMouseMove).toHaveBeenCalledTimes(0)
   expect(onMouseEnter).toHaveBeenCalledTimes(0)
   fireEvent.mouseEnter(el)
   expect(onMouseEnter).toHaveBeenCalledTimes(1)
   // mouse over seems to be also called on mouse enter
-  expect(onMouseOver).toHaveBeenCalledTimes(1)
+  expect(onMouseMove).toHaveBeenCalledTimes(1)
 
   fireEvent.mouseOver(el)
-  expect(onMouseOver).toHaveBeenCalledTimes(2)
+  expect(onMouseMove).toHaveBeenCalledTimes(2)
 
   fireEvent.mouseLeave(el)
   expect(onMouseLeave).toHaveBeenCalledTimes(1)
