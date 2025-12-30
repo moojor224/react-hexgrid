@@ -180,7 +180,7 @@ export function Hexagon(
     onMouseMove: createMouseEvent("onMouseMove"),
     onMouseLeave: createMouseEvent("onMouseLeave"),
     onMouseDown: createMouseEvent("onMouseDown"),
-    onMouseUp: createMouseEvent("onMouseup"),
+    onMouseUp: createMouseEvent("onMouseUp"),
   };
   return (
     <g
